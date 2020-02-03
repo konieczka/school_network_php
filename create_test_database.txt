@@ -1,0 +1,74 @@
+INSERT INTO teachers(teacher_id, first_name, last_name, date_of_birth)
+VALUES (1, 'Jan', 'Kowalski', '12-04-1970'),
+(2, 'Danuta', 'Nowak', '15-10-1973'),
+(3, 'Władysław', 'Złowrogi', '2-05-1962'),
+(4, 'Wiesław', 'Wpierdolewicz', '23-12-1967'),
+(5, 'Roman', 'Piwko', '13-06-1972'),
+(6, 'Mikołaj', 'Rębajło', '6-03-1979'),
+(7, 'Jolanta', 'Trzeźwinko', '14-02-1971'),
+(8, 'Bogumiła', 'Grzeszna', '26-08-1974'),
+(9, 'Mariusz', 'Pudzianowski', '07-02-1977')
+
+INSERT INTO classes(class_id, class_symbol, grade, lead_teacher)
+VALUES (1, 'A', 1, (SELECT teacher_id FROM teachers WHERE teacher_id = 1)),
+(2, 'B', 1, (SELECT teacher_id FROM teachers WHERE teacher_id = 2)),
+(3, 'C', 1, (SELECT teacher_id FROM teachers WHERE teacher_id = 3)),
+(4, 'D', 1, (SELECT teacher_id FROM teachers WHERE teacher_id = 4))
+
+INSERT INTO students(student_id, first_name, last_name, date_of_birth, class_alegiance)
+VALUES *generate*
+
+INSERT INTO subjects(subject_id, subject_name, is_advanced)
+VALUES (1, 'Polish', 'true'),
+(2, 'Polish', 'false'),
+(3, 'Maths', 'true'),
+(4, 'Maths', 'false'),
+(5, 'Chemistry', 'true'),
+(6, 'Chemistry', 'false'),
+(7, 'Biology', 'true'),
+(8, 'Biology', 'false'),
+(9, 'Physics', 'true'),
+(10, 'Physics', 'false'),
+(11, 'History', 'true'),
+(12, 'History', 'false'),
+(13, 'Computer science', 'true'),
+(14, 'Computer science', 'false'),
+(15, 'English', 'true'),
+(16, 'English', 'false'),
+(17, 'Geography', 'true'),
+(18, 'Geography', 'false'),
+(66, 'P.E.', 'false')
+
+INSERT INTO teachers_subjects_relation(teacher_id, subject_id)
+VALUES ((SELECT teacher_id FROM teachers WHERE teacher_id=4),(SELECT subject_id FROM subjects WHERE subject_id=1)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=5),(SELECT subject_id FROM subjects WHERE subject_id=2)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=8),(SELECT subject_id FROM subjects WHERE subject_id=2)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=8),(SELECT subject_id FROM subjects WHERE subject_id=3)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=4),(SELECT subject_id FROM subjects WHERE subject_id=3)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=9),(SELECT subject_id FROM subjects WHERE subject_id=3)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=4),(SELECT subject_id FROM subjects WHERE subject_id=4)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=5),(SELECT subject_id FROM subjects WHERE subject_id=4)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=6),(SELECT subject_id FROM subjects WHERE subject_id=5)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=2),(SELECT subject_id FROM subjects WHERE subject_id=6)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=4),(SELECT subject_id FROM subjects WHERE subject_id=6)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=5),(SELECT subject_id FROM subjects WHERE subject_id=6)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=1),(SELECT subject_id FROM subjects WHERE subject_id=7)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=1),(SELECT subject_id FROM subjects WHERE subject_id=8)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=1),(SELECT subject_id FROM subjects WHERE subject_id=9)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=5),(SELECT subject_id FROM subjects WHERE subject_id=10)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=5),(SELECT subject_id FROM subjects WHERE subject_id=11)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=2),(SELECT subject_id FROM subjects WHERE subject_id=11)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=8),(SELECT subject_id FROM subjects WHERE subject_id=12)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=1),(SELECT subject_id FROM subjects WHERE subject_id=13)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=3),(SELECT subject_id FROM subjects WHERE subject_id=13)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=2),(SELECT subject_id FROM subjects WHERE subject_id=13)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=5),(SELECT subject_id FROM subjects WHERE subject_id=14)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=2),(SELECT subject_id FROM subjects WHERE subject_id=14)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=7),(SELECT subject_id FROM subjects WHERE subject_id=15)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=1),(SELECT subject_id FROM subjects WHERE subject_id=15)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=7),(SELECT subject_id FROM subjects WHERE subject_id=16)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=8),(SELECT subject_id FROM subjects WHERE subject_id=16)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=4),(SELECT subject_id FROM subjects WHERE subject_id=17)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=1),(SELECT subject_id FROM subjects WHERE subject_id=18)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=7),(SELECT subject_id FROM subjects WHERE subject_id=18)),
+((SELECT teacher_id FROM teachers WHERE teacher_id=9),(SELECT subject_id FROM subjects WHERE subject_id=66))

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+.bottom {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background: url("../images/background.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.loginWrapper {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+
+  padding: 15px;
+
+  display: flex;
+  flex-flow: column;
+  height: 50%;
+  width: 30%;
+
+  margin-left: 10vw;
+}
+
+.formWrapper {
+  color: white;
+  text-shadow: black 2px 2px 3px;
+  padding: 0px 30px;
+}
+
+.headerText {
+  margin: 15px 0 35px;
+  font-size: 60px;
+}
+
+.submitButton {
+  padding: 5px;
+  margin: 15px 0;
+  width: 100%;
+
+  border-radius: 5px;
+  color: white;
+  text-shadow: black 2px 2px 3px;
+  
+  font-size: large;
+  border: none;
+  transition-duration: 0.2s;
+  background-color:#007bff;
+}
+
+.submitButton:hover {
+  background-color: #0069d9;
+}
+
+.switchButton {
+  border: none;
+  background: none;
+  transition-duration: 0.2s;
+  text-shadow: white 1px 1px 1px;
+  color: #007bff;
+}
+.switchButton:hover {
+  color:#00448d;
+}

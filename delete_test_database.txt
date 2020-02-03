@@ -1,0 +1,5 @@
+DELETE FROM teachers_subjects_relation
+DELETE FROM students
+DELETE FROM classes
+DELETE FROM teachers
+DELETE FROM subjects

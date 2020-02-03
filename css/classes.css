@@ -1,0 +1,14 @@
+.clickableRow{
+    transition-duration: 0.2s;
+  }
+
+.clickableRow:hover {
+  cursor: pointer;
+}
+
+.teacherSelect {
+  border-radius: 5px;
+  width:100%;
+  height: 40px;
+  margin-top: 15px;
+}

@@ -1,0 +1,23 @@
+.buttonEdit,
+.buttonDelete {
+  border: none;
+  background: none;
+  transition-duration: 0.2s;
+  font-family: sans-serif;
+  outline: none;
+}
+
+.buttonEdit:hover {
+  color: #007bff;
+}
+
+.buttonDelete:hover {
+  color: red;
+}
+
+.buttonEdit:active,
+.buttonDelete:active,
+.buttonEdit:focus,
+.buttonDelete:focus {
+  outline: none;
+}
